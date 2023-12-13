@@ -20,7 +20,7 @@ struct GravityKernel {
     GravityKernel(Vec2crd gravity_center) :
         sink{gravity_center}, active_sink{unscaled(gravity_center)} {}
 
-    GravityKernel() = default;
+    GravityKernel() : active_sink(0, 0) {}
 
     template<class ArrItem>
     double placement_fitness(const ArrItem &itm, const Vec2crd &transl) const
